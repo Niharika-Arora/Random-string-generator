@@ -2,7 +2,7 @@ import random
 
 
 def random_name():
-    file1 = open(r"C:\Users\Neha\PycharmProjects\personal projects\random movies.txt", "r+")
+    file1 = open(r"movies_available.txt", "r+")
     line = random.choice(list(file1))
     return line
 
@@ -14,7 +14,10 @@ def menu():
     ch = int(input("Enter the corresponding number for your choice : "))
     return ch
 
+
 def shift(s):
+    pass
+
 
 if __name__ == "__main__":
     choice = menu()
