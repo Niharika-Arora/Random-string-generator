@@ -1,4 +1,6 @@
 import random
+import sys
+from queue import Queue
 
 
 def random_name():
@@ -14,17 +16,27 @@ def menu():
     ch = int(input("Enter the corresponding number for your choice : "))
     return ch
 
+
 def shift(s):
+    q = Queue()
+    q.put(s)
+    done = open(r"Random.txt", "a")
+    accepted = q.get()
+    done.write(accepted)
+
 
 if __name__ == "__main__":
-    choice = menu()
-    if choice == 1:
-        name = random_name()
-        print(name)
-        choice1 = input("Enter 'y' to accept\nEnter 'n' to choose another name\nEnter 'e' to go back to main menu : ")
-        if choice1 == 'y' or choice1 == 'Y':
-            shift(name)
-        if choice1 == 'n' or choice1 == 'N':
-            name1 = random_name()
-        if choice1 == 'e' or choice1 == 'E':
-            num = menu()
+    while menu():
+        choice = menu()
+        if choice == 1:
+            name = random_name()
+            print(name)
+            choice1 = input("Enter 'y' to accept\nEnter 'n' to choose another name\nEnter 'e' to go back to main menu : ")
+            if choice1 == 'y' or choice1 == 'Y':
+                shift(name)
+            if choice1 == 'n' or choice1 == 'N':
+                name1 = random_name()
+            if choice1 == 'e' or choice1 == 'E':
+                num = menu()
+        else:
+            sys.exit()
