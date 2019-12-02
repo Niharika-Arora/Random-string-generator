@@ -4,7 +4,7 @@ from queue import Queue
 
 
 def random_name():
-    file1 = open(r"C:\Users\Neha\PycharmProjects\personal projects\random movies.txt", "r+")
+    file1 = open(r"movies_available.txt", "r+")
     line = random.choice(list(file1))
     return line
 
@@ -18,6 +18,7 @@ def menu():
 
 
 def shift(s):
+<<<<<<< HEAD:Random String Generator.py
     q = Queue()
     q.put(s)
     done = open(r"Random.txt", "a")
@@ -40,3 +41,20 @@ if __name__ == "__main__":
                 num = menu()
         else:
             sys.exit()
+=======
+    pass
+
+
+if __name__ == "__main__":
+    choice = menu()
+    if choice == 1:
+        name = random_name()
+        print(name)
+        choice1 = input("Enter 'y' to accept\nEnter 'n' to choose another name\nEnter 'e' to go back to main menu : ")
+        if choice1 == 'y' or choice1 == 'Y':
+            shift(name)
+        if choice1 == 'n' or choice1 == 'N':
+            name1 = random_name()
+        if choice1 == 'e' or choice1 == 'E':
+            num = menu()
+>>>>>>> e095d67694edc36d4ba1043af696c3d02e3f9fd7:RandomStringGenerator.py
