@@ -18,12 +18,9 @@ def menu():
 
 
 def shift(s):
-    q = Queue()
-    q.put(s)
     done = open(r"Random.txt", "a")
-    accepted = q.get()
-    print(accepted)
-    done.write(accepted)
+    print(s)
+    done.write(s)
     print("name deleted")
 
 
@@ -37,10 +34,10 @@ while True:
             choice1 = input("So which is it? : ")
             if choice1 == 'y' or choice1 == 'Y':
                 shift(name)
+            if choice1 == 'e' or choice1 == 'E':
+                num = menu()
             if choice1 == 'n' or choice1 == 'N':
                 name1 = random_name()
                 print(name1)
-            if choice1 == 'e' or choice1 == 'E':
-                num = menu()
         else:
             sys.exit()
