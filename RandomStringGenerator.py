@@ -23,20 +23,21 @@ def shift(s):
     print("name deleted")
 
 
-while True:
-    if __name__ == "__main__":
+if __name__ == "__main__":
+    while True:
         choice = menu()
         if choice == 1:
-            name = random_name()
-            print(name)
-            print("Enter 'y' to accept\nEnter 'n' to choose another name\nEnter 'e' to go back to main menu")
-            choice1 = input("So which is it? : ")
-            if choice1 == 'y' or choice1 == 'Y':
-                shift(name)
-            if choice1 == 'e' or choice1 == 'E':
-                num = menu()
-            if choice1 == 'n' or choice1 == 'N':
-                name1 = random_name()
-                print(name1)
+            while True:
+                name = random_name()
+                print(name)
+                print("Enter 'y' to accept\nEnter 'n' to choose another name\nEnter 'e' to go back to main menu")
+                choice1 = input("So which is it? : ")
+                if choice1 == 'y' or choice1 == 'Y':
+                    shift(name)
+                    break
+                if choice1 == 'e' or choice1 == 'E':
+                    break
+                else:
+                    continue
         else:
-            sys.exit()
+            sys.exit(0)
