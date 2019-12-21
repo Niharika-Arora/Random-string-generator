@@ -5,6 +5,7 @@ import sys
 def random_name():
     file1 = open(r"movies_available.txt", "r+")
     line = random.choice(list(file1))
+    file1.close()
     return line
 
 
@@ -16,11 +17,25 @@ def menu():
     return ch
 
 
+def delete(line):
+    file = open(r"movies_available.txt", "r")
+    content = list(file)
+    file.close()
+    file = open(r"movies_available.txt", "w")
+    for c in content:
+        if c == line:
+            continue
+        file.write(c)
+    file.close()
+
+
 def shift(s):
-    done = open(r"Random.txt", "a")
+    done = open(r"movies_used.txt", "a")
     print(s)
     done.write(s)
+    delete(s)
     print("name deleted")
+    done.close()
 
 
 if __name__ == "__main__":
