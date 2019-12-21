@@ -1,6 +1,5 @@
 import random
 import sys
-from queue import Queue
 
 
 def random_name():
